@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Event</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .form-container table {
+            width: 100%;
+        }
+        .form-container td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="date"],
+        .form-container input[type="time"],
+        .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-container textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="EventServlet" method="post">
+            <h2>Create Event</h2>
+            <table>
+                <tr>
+                    <td align="right"><label for="eventName">Event Name:</label></td>
+                    <td><input type="text" id="eventName" name="eventName" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="eventDate">Event Date:</label></td>
+                    <td><input type="date" id="eventDate" name="eventDate" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="eventTime">Event Time (HH:MM:SS):</label></td>
+                    <td><input type="text" id="eventTime" name="eventTime" required placeholder="14:30:00"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="location">Location:</label></td>
+                    <td><input type="text" id="location" name="location" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="description">Description:</label></td>
+                    <td><textarea id="description" name="description" rows="4" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
